@@ -28,17 +28,25 @@ divs[0].textContent = "ehvsc";
 
 divs.forEach(div => {container.appendChild(div)})
 
-let activateGridOnHover = (gridArray) => {gridArray.forEach( square => {
+let activateGrid = (gridArray) => {gridArray.forEach( square => {
     square.addEventListener('mouseover',event => {
         square.classList.add("hover")
     })
     square.addEventListener('mouseout',(event)=>{
         square.classList.remove('hover');
     })
+    square.addEventListener('click',(event) =>{
+        if(square.classList.contains("click")){
+            square.classList.remove("click");
+        }
+        else{
+            square.classList.add("click");
+        }
+    })
 });
 };
 
-activateGridOnHover(divs);
+activateGrid(divs);
 
 let question = document.querySelector("button#size")
 let size;

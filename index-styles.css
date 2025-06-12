@@ -22,3 +22,7 @@
 .container .square.hover{
     background-color: black;
 }
+
+.container .square.click{
+    background-color: black;
+}
